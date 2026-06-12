@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import random
+import re
 import textwrap
 
 TEMPLATES = [
@@ -122,8 +123,6 @@ def main():
             raw = input("단어 세 개를 입력하세요 (쉼표로 구분, 예: 바람,별,강): ").strip()
             if not raw:
                 continue
-            # 전각 쉼표, 공백, 일반 쉼표 모두 구분자로 처리
-            import re
             words = [w.strip() for w in re.split(r'[,，\s]+', raw) if w.strip()]
             if len(words) < 3:
                 print("→ 단어를 세 개 입력해주세요!\n")
